@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title></title>
+	<meta charset="utf-8">
+ </head>
+   
+<body>
+         <!-- 在事件处理函数的内部this始终等于currentTarget的值 -->
+          <button id="btn" >点我</button>
+          <div id="div" data="wangba">点我</div>
+
+         <script type="text/javascript">
+        	var btn=document.getElementById("btn");
+        	var div=document.getElementById("div");
+          
+          btn.addEventListener("click",function () {
+                console.log(this)//实际目标
+                console.log(event.target)//事件目标
+            	console.log(event.currentTarget)//实际目标
+            	console.log(event.srcElement)//事件目标
+            	
+            })
+         document.body.addEventListener("click",function (event) {
+                console.log(this)//实际目标
+            	console.log(event.target)//事件目标
+            	console.log(event.currentTarget)//实际目标
+            	console.log(event.srcElement)//事件目标
+            })
+          
+         </script>
+</body>
+</html>
