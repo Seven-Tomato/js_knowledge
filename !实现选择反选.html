@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>!实现选择反选</title>
+</head>
+<body>
+      <input type="checkbox" name="">
+      <input type="checkbox" name="">
+      <input type="checkbox" name="">
+      <input type="checkbox" name="">
+      <input type="checkbox" name="">
+      <input type="checkbox" name="">
+      <input type="checkbox" name="">
+      <button id="btn">反选</button>
+     <script type="text/javascript">
+           var btn=document.getElementById("btn"),
+               oinput=document.getElementsByTagName("input");
+               btn.onclick=function(){
+               	   for (var i = 0; i < oinput.length; i++) {
+            	      oinput[i].checked=!oinput[i].checked;
+                   }
+               }
+     </script>
+</body>
+</html>

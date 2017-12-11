@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>call——apply</title>
+</head>
+<body>
+       <script type="text/javascript">
+                
+                var a={};
+                var b={};
+       	 		function sum(a,b,c){
+                    alert(a+b+c)
+       	 		};	   
+                sum(1,2,3);//6
+               
+                sum.call(b,1,1,1);//3  把sum方法给b并传入参数（数列）
+
+                sum.apply(a,[4,4,4])//12  把sum方法给a并传入参数（数组）
+       	 
+       </script>
+</body>
+</html>

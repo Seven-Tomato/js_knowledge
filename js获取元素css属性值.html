@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+  /*
+     getComputedStyle方法兼容到ie9
+     currentStyle方法是ie自己的
+
+     querySelector这种选择的方法兼容到ie8
+  */
+
+	 p:after{content: "我是p元素后面的为元素";
+             color: red;/*rgb(255,0,0)*/
+  }
+	
+	</style>
+</head>
+<body>
+      <p id="p" style="display: inline-block;">你好！</p>
+      <script type="text/javascript">
+      	var p=document.getElementById("p");
+      /*  alert(window.getComputedStyle(p,":after").color);*/
+
+        function getCss(ele){
+          return ele.currentStyle? ele.currentStyle : window.getComputedStyle(ele, null);
+        }
+         alert(getCss(p).height);
+     
+      </script>
+</body>
+</html>

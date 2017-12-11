@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>insertBefore()</title>
+
+</head>
+<body>
+       <div id="box">
+	       <p id="p1">1</p>
+	       <p>2</p>
+	       <p>3</p>
+       </div>
+       <script type="text/javascript">
+       var p1=document.getElementById("p1")
+       	   var box=document.getElementById('box');
+       	   var div=document.createElement("div");
+       	   var text=document.createTextNode("hello word");
+       	   div.appendChild(text);
+       	    cleanWhitespace(box);
+       	  box.insertBefore(div,box.childNodes[1]);
+
+
+       	    function cleanWhitespace(ele){
+				 for(var i=0;i<ele.childNodes.length;i++){
+					  var node=ele.childNodes[i];
+					  if(node.nodeType==3 && !/\S/.test(node.nodeValue)){
+					  	 node.parentNode.removeChild(node);
+					  }
+				  }
+           }
+    
+           alert(box.childNodes.length)
+       </script>
+</body>
+</html>
