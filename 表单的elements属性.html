@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title表单的elements属性</title>
+</head>
+ <body>
+         <!-- 
+            每个表单元素都有一个elements属性
+            form.elements就能取到form里的所有表单元素
+            返回的是一个NodeList
+         -->
+         <form>
+        	 <input type="text" name="ipt">
+        	 <button>nihao</button>
+        	 <input type="text" name="ipt">
+        	 <input type="text" name="ipt">
+        </form>
+         <script type="text/javascript">
+         	const ofrom=document.querySelector("form"); 
+            console.log(ofrom.elements[1]);
+            ofrom.elements[1].disabled=true;
+         </script>
+</body>
+</html>                                                                                                                                                                                         
