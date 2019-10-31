@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = [
+            {
+                id: 1,
+                children:[{
+                        id:2,
+                        children:[]
+                    }]
+            },
+            {
+                id:3,
+                children:[]
+            },
+            {
+                id:4,
+                children:[
+                    {
+                        id:5,
+                        children:[
+                            {
+                                id:6,
+                                children:[]
+                            },
+                            {
+                                id:7,
+                                children:[]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+     function find(arr,id){
+        arr.forEach(function(item){
+                if(item.id == id){
+                    console.log(item)
+                    return
+                }else if(item.children.length>0){
+                    //arguments.callee(item.children,id)
+                     find(item.children,id)
+                }
+            })
+     }
+     find(array,5)
+    </script>
+</body>
+</html>
