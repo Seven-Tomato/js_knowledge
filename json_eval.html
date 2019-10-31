@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json和eval()方法</title>
+</head>
+<body>
+    <script>
+        let jsonStr4 = "{'name':'oo','age':'18'}"
+        //let json4 = JSON.parse(jsonStr4)//报错
+
+        // JSON.parse()只能解析标准的json字符串如下
+        // jsonStr = '{"name":"oo","age":"18"}'
+        //解析jsonStr4 = "{'name':'oo','age':'18'}" 就会报错
+
+
+
+        //解决办法用eval()解决：
+        /*由于json是以”{}”的方式来开始以及结束的，在JS中，它会被当成一个语句块来处理，所以必须强制性的将它转换成一种表达式。加上圆括号的目的是迫使eval函数在处理JavaScript代码的时候强制将括号内的表达式（expression）转化为对象，而不是作为语句（statement）来执行。*/
+        console.log(eval("({})"))
+
+
+        console.log(`(${jsonStr4})`)
+        console.log(eval(`(${jsonStr4})`))
+    </script>
+</body>
+</html>
